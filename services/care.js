@@ -102,6 +102,16 @@ module.exports = class Care {
           Survey.genAgentRating(this.agentFirstName)
         ];
         break;
+      case "CARE_SAYHI":
+        response = [
+          Response.genText(
+            i18n.__("care.prompt", {
+              userName: this.user.name,
+              agentFirstName: this.agentFirstName
+            })
+          )
+        ];
+        break;
     }
 
     return response;
